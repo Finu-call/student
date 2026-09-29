@@ -3,7 +3,7 @@ import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 export const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
+ apiKey: "AIzaSyC1lyGA9VZuAYKzSTcRu1r8fOnsoMBHh7I",
   authDomain: "studentsave-d07e1.firebaseapp.com",
   projectId: "studentsave-d07e1",
   storageBucket: "studentsave-d07e1.firebasestorage.app",
