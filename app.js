@@ -12,7 +12,8 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&
 const toast=(m,e=false)=>{let x=document.createElement("div");x.className="toast"+(e?" err":"");x.textContent=m;$("#toast").append(x);setTimeout(()=>x.remove(),3200)};
 const err=(e,m)=>{console.error(e);toast(m,true)};
 const catIcon=n=>(cats.find(x=>x[1]===n)||["📦"])[0];
-const dateVal=d=>d?.toDate?d.toDate():new Date(d);\nconst txDate=d=>{let x=d?.toDate?d.toDate():new Date(d);return x.toLocaleDateString("en-IN",{day:"2-digit",month:"short"})+" · "+x.toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit"})};
+const dateVal=d=>d?.toDate?d.toDate():new Date(d);
+const txDate=d=>{let x=d?.toDate?d.toDate():new Date(d);return x.toLocaleDateString("en-IN",{day:"2-digit",month:"short"})+" · "+x.toLocaleTimeString("en-IN",{hour:"numeric",minute:"2-digit"})};
 const thisMonth=t=>{let d=t?.toDate?t.toDate():new Date(t),n=new Date();return d.getMonth()===n.getMonth()&&d.getFullYear()===n.getFullYear()};
 const sum=(a,f=x=>x.amount)=>a.reduce((n,x)=>n+Number(f(x)||0),0);
 async function load(n){let s=await getDocs(collection(db,"users",uid(),n));return s.docs.map(d=>({id:d.id,...d.data()}))}
